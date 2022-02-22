@@ -23,7 +23,7 @@ public class FFmpegActivity {
             }
         });
     }
-    public void videotoaudio(String inputvideo,String outputaudio) {
+    public static void videotoaudio(String inputvideo,String outputaudio) {
         String[] co = {"-i",inputvideo,"-vn",outputaudio };
         FFmpeg.executeAsync(co, new ExecuteCallback() {
             @Override
@@ -35,7 +35,7 @@ public class FFmpegActivity {
             }
         });
     }
-    public void trimvideo(String inputvideo,String outputvideo)
+    public static void trimvideo(String inputvideo,String outputvideo)
     {
         String[] co ={"-y", "-i", inputvideo,"-ss", "00:00:03" , "-to", "00:00:45" , "-c", "copy",outputvideo};
         FFmpeg.executeAsync(co, new ExecuteCallback() {
